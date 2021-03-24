@@ -1,6 +1,6 @@
 {
   "name": "payment-tracker",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,24 +8,25 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --prod --aot"
+    "start:prod": "node server.js"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.2.6",
+    "@angular/cli": "~11.2.5",
     "@angular/common": "~11.2.6",
     "@angular/compiler": "~11.2.6",
+    "@angular/compiler-cli": "~11.2.6",
     "@angular/core": "~11.2.6",
     "@angular/forms": "~11.2.6",
     "@angular/platform-browser": "~11.2.6",
     "@angular/platform-browser-dynamic": "~11.2.6",
     "@angular/router": "~11.2.6",
-    "@angular/cli": "~11.2.5",
-    "@angular/compiler-cli": "~11.2.6",
+    "express": "4.17.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2",
-    "typescript": "~4.0.2"
+    "typescript": "~4.0.2",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.1102.5",
@@ -45,7 +46,7 @@
     "tslint": "~6.1.0"
   },
   "engines": {
-    "node": "14.10.1",
-    "npm": "7.6.3"
+    "node": "12.21.0",
+    "npm": "6.14.11"
   }
 }
