@@ -1,0 +1,35 @@
+<div class="login-form form">
+    <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input 
+            type="email" 
+            ngModel 
+            name="email" 
+            class="form-control" 
+            id="newEmail" 
+            aria-describedby="emailHelp" 
+            placeholder="Enter email" 
+            required
+            email
+            #emailModel="ngModel">
+            <span class="help-block" *ngIf="emailModel.touched && !emailModel.valid">
+                Please enter a valid email!
+            </span>
+        </div>
+        <div *ngIf="registered; else registerButton" class="text-center text-success">
+            {{ registered }}
+        </div>
+        <ng-template #registerButton class="col-md-12 text-center">
+            <button 
+            type="submit" 
+            class="btn btn-block submit-button btn-primary tx-tfm"
+            [disabled]="!registerForm.valid">Register / Reset password</button>
+        </ng-template>
+        
+    </form>
+    <div *ngIf="isRegistering" class="text-center">
+        <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div *ngIf="signUpErrorMessage" class="text-danger text-center">{{ signUpErrorMessage }}</div>
+</div>

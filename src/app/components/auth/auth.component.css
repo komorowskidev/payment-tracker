@@ -1,0 +1,35 @@
+a{
+    text-decoration:none !important;
+    }
+     .login-form{
+       position: relative;
+       display: -ms-flexbox;
+       display: flex;
+       padding: 1rem;
+       -ms-flex-direction: column;
+       flex-direction: column;
+       width: 100%;
+       pointer-events: auto;
+       background-color: #fff;
+       background-clip: padding-box;
+       border: 1px solid rgba(0,0,0,.2);
+       border-radius: 1.1rem;
+       outline: 0;
+       max-width: 500px;
+    }
+    .tx-tfm{
+       text-transform:uppercase;
+    }
+    .submit-button{
+       border-radius:50px;
+    }
+     input.ng-invalid.ng-touched {
+       border: 1px solid #ff0000;
+    }
+.or{
+   text-align: center;
+   margin-top: 1rem;
+}
+hr{
+   margin: 0.7rem auto;
+}

@@ -1,0 +1,48 @@
+<div class="login-form form">
+    <form (ngSubmit)="onSubmit()" #authForm="ngForm">
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input 
+            type="email" 
+            ngModel 
+            name="email" 
+            class="form-control" 
+            id="email" 
+            aria-describedby="emailHelp" 
+            placeholder="Enter email" 
+            required
+            email
+            #emailModel="ngModel">
+            <span class="help-block" *ngIf="emailModel.touched && !emailModel.valid">
+                Please enter a valid email!
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Password</label>
+            <input 
+            type="password" 
+            ngModel 
+            name="password" 
+            class="form-control" 
+            id="password" 
+            aria-describedby="emailHelp" 
+            placeholder="Enter password"
+            required
+            minlength="6"
+            #passwordModel="ngModel">
+            <span class="help-block" *ngIf="passwordModel.touched && !passwordModel.valid">
+                Please enter the password!
+            </span>
+        </div>
+        <div class="col-md-12 text-center">
+            <button 
+            type="submit" 
+            class="btn btn-block submit-button btn-primary tx-tfm"
+            [disabled]="!authForm.valid">Login</button>
+        </div>
+    </form>
+    <div *ngIf="isLogging" class="text-center">
+        <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div *ngIf="signInErrorMessage" class="text-danger text-center">{{ signInErrorMessage }}</div>
+</div>
