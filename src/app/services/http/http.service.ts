@@ -1,5 +1,4 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { BoundDirectivePropertyAst } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthResponseData } from 'src/app/interfaces/auth-response-data';
@@ -27,11 +26,11 @@ export class HttpService {
     });
   }
 
-  getClients(): Observable<boolean> {
-    return this.http.get<boolean>(environment.apiUrl + 'api/clients', {
-      headers: new HttpHeaders().set('Authorization', this.token)
-    })
-  }
+  // getClients(): Observable<boolean> {
+  //   return this.http.get<boolean>(environment.apiUrl + 'api/clients', {
+  //     headers: new HttpHeaders().set('Authorization', this.token)
+  //   })
+  // }
 
   setToken(token: string){
     this.token = token;

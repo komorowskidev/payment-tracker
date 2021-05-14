@@ -11,8 +11,8 @@ export class AuthGuardService implements CanActivate, AuthState {
 
   private logged: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {
-    this.authService.addAuthStateObserver(this);
+  constructor(private router: Router, authService: AuthService) {
+    authService.addAuthStateObserver(this);
   }
 
   userLogged(logged: boolean): void {

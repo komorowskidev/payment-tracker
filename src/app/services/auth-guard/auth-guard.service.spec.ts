@@ -28,6 +28,10 @@ describe('AuthGuardService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should register as observer in AuthService', () => {
+    expect(authServiceSpy.addAuthStateObserver).toHaveBeenCalledWith(service);
+  })
+
   it('canActivated should return true when logged', () => {
     service.userLogged(true);
 
