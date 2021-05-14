@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { Router } from '@angular/router';
+import { Router, UrlTree } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 
 import { AuthGuardService } from './auth-guard.service';
@@ -27,4 +27,22 @@ describe('AuthGuardService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('canActivated should return true when logged', () => {
+    service.userLogged(true);
+
+    const actual = service.canActivate(null, null);
+
+    expect(actual).toBeTrue();
+  })
+
+  it('canActivated should return urlTree to auth when not logged', () => {
+    service.userLogged(false);
+    const urlTree = {} as UrlTree;
+    routerSpy.createUrlTree.withArgs(['/auth']).and.returnValue(urlTree);
+
+    const actual = service.canActivate(null, null);
+
+    expect(actual).toBe(urlTree);
+  })
 });
