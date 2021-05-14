@@ -15,7 +15,7 @@ export class AuthService {
   
   constructor(private httpService: HttpService, private router: Router) { }
 
-  signIn(email: string, password: string, response: ErrorResponse): void{
+  signIn(email: string, password: string, response: ErrorResponse): void {
     this.httpService.signIn(email, password).subscribe(
       resData => {
         this.httpService.setToken(resData.token);
