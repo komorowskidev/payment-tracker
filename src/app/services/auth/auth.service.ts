@@ -37,7 +37,7 @@ export class AuthService {
   signUp(email: string, response: Response): void {
     this.httpService.signUp(email).subscribe(
       next => {
-        response.onRespond(ResponseType.REGISTERED, 'Successful. Chceck your email for instructions.')
+        response.onRespond(ResponseType.REGISTERED, 'Successful. Chceck your email: ' + email + ' for instructions.')
       },
       error => {
         response.onRespond(ResponseType.SIGNUP_ERROR, 'Application malfunction. Try again later.')

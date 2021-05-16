@@ -117,7 +117,7 @@ describe('AuthService', () => {
     it('should respond REGISTERED message when success', () => {
       httpServiceSpy.signUp.withArgs(email).and.returnValue(of(true));
       const responseSpy = jasmine.createSpyObj('Response', ['onRespond']) as Response;
-      const message = 'Successful. Chceck your email for instructions.';
+      const message = 'Successful. Chceck your email: ' + email + ' for instructions.';
   
       service.signUp(email, responseSpy);
   
